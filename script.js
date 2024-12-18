@@ -1,28 +1,28 @@
 var q = 4;
-var arr = document.getElementsByClassName("element");
+var arr = document.getElementsByClassName('element');
 init();
 
 window.onload = init();
 
-var arr = document.getElementsByClassName("element");
+var arr = document.getElementsByClassName('element');
 
 function right() {
   var can = false;
   var access = false;
   var k;
-  var score = document.getElementById("score");
+  var score = document.getElementById('score');
 
   for (var i = 14; i > 0; i -= 4) {
     //alert("step1");
     access = false;
     for (var j = i; j >= i - 2; j--) {
       //alert("step2");
-      if (arr[j].innerHTML !== "") {
+      if (arr[j].innerHTML !== '') {
         k = j;
         while (
           k < i + 1 &&
           (parseInt(arr[k + 1].innerHTML) === parseInt(arr[k].innerHTML) ||
-            arr[k + 1].innerHTML === "")
+            arr[k + 1].innerHTML === '')
         ) {
           //alert("i="+i+" j="+j+" k="+k);
           if (
@@ -33,7 +33,7 @@ function right() {
               parseInt(arr[k + 1].innerHTML) + parseInt(arr[k].innerHTML);
             score.innerHTML =
               parseInt(arr[k + 1].innerHTML) + parseInt(score.innerHTML);
-            arr[k].innerHTML = "";
+            arr[k].innerHTML = '';
             can = true;
             access = true;
           } else if (
@@ -41,9 +41,9 @@ function right() {
             access === true
           ) {
             access === false;
-          } else if (arr[k + 1].innerHTML === "") {
+          } else if (arr[k + 1].innerHTML === '') {
             arr[k + 1].innerHTML = parseInt(arr[k].innerHTML);
-            arr[k].innerHTML = "";
+            arr[k].innerHTML = '';
             can = true;
           }
           k += 1;
@@ -60,19 +60,19 @@ function left() {
   var can = false;
   var access = false;
   var k;
-  var score = document.getElementById("score");
+  var score = document.getElementById('score');
   //fixed
   for (var i = 13; i > 0; i -= 4) {
     //alert("step1");
     access = false;
     for (var j = i; j <= i + 2; j++) {
       //alert("step2");
-      if (arr[j].innerHTML !== "") {
+      if (arr[j].innerHTML !== '') {
         k = j;
         while (
           k > i - (i % 4) &&
           (parseInt(arr[k - 1].innerHTML) === parseInt(arr[k].innerHTML) ||
-            arr[k - 1].innerHTML === "")
+            arr[k - 1].innerHTML === '')
         ) {
           //alert("i="+i+" j="+j+" k="+k);
           if (
@@ -81,7 +81,7 @@ function left() {
           ) {
             arr[k - 1].innerHTML =
               parseInt(arr[k - 1].innerHTML) + parseInt(arr[k].innerHTML);
-            arr[k].innerHTML = "";
+            arr[k].innerHTML = '';
             can = true;
             access = true;
             score.innerHTML =
@@ -91,9 +91,9 @@ function left() {
             access === true
           ) {
             access === false;
-          } else if (arr[k - 1].innerHTML === "") {
+          } else if (arr[k - 1].innerHTML === '') {
             arr[k - 1].innerHTML = parseInt(arr[k].innerHTML);
-            arr[k].innerHTML = "";
+            arr[k].innerHTML = '';
             can = true;
           }
           k -= 1;
@@ -110,18 +110,18 @@ function down() {
   var can = false;
   var access = false;
   var k;
-  var score = document.getElementById("score");
+  var score = document.getElementById('score');
   //fixed
   for (var i = 11; i > 7; i -= 1) {
     //alert(arr[i].innerHTML==="");
     access = false;
     for (var j = i; j >= 0; j = j - 4) {
-      if (arr[j].innerHTML !== "") {
+      if (arr[j].innerHTML !== '') {
         k = j;
         while (
           k < 12 &&
           (parseInt(arr[k + 4].innerHTML) === parseInt(arr[k].innerHTML) ||
-            arr[k + 4].innerHTML === "")
+            arr[k + 4].innerHTML === '')
         ) {
           //alert("i="+i+" j="+j+" k="+k);
           if (
@@ -130,7 +130,7 @@ function down() {
           ) {
             arr[k + 4].innerHTML =
               parseInt(arr[k + 4].innerHTML) + parseInt(arr[k].innerHTML);
-            arr[k].innerHTML = "";
+            arr[k].innerHTML = '';
             can = true;
             access = true;
             score.innerHTML =
@@ -140,9 +140,9 @@ function down() {
             access === true
           ) {
             access === false;
-          } else if (arr[k + 4].innerHTML === "") {
+          } else if (arr[k + 4].innerHTML === '') {
             arr[k + 4].innerHTML = parseInt(arr[k].innerHTML);
-            arr[k].innerHTML = "";
+            arr[k].innerHTML = '';
             can = true;
           }
           k += 4;
@@ -159,18 +159,18 @@ function up() {
   var can = false;
   var access = false;
   var k;
-  var score = document.getElementById("score");
+  var score = document.getElementById('score');
   //fixed
   for (var i = 7; i > 3; i -= 1) {
     //alert(arr[i].innerHTML==="");
     access = false;
     for (var j = i; j < i + 9; j += 4) {
-      if (arr[j].innerHTML !== "") {
+      if (arr[j].innerHTML !== '') {
         k = j;
         while (
           k >= i &&
           (parseInt(arr[k - 4].innerHTML) === parseInt(arr[k].innerHTML) ||
-            arr[k - 4].innerHTML === "")
+            arr[k - 4].innerHTML === '')
         ) {
           //alert("i="+i+" j="+j+" k="+k);
           if (
@@ -179,7 +179,7 @@ function up() {
           ) {
             arr[k - 4].innerHTML =
               parseInt(arr[k - 4].innerHTML) + parseInt(arr[k].innerHTML);
-            arr[k].innerHTML = "";
+            arr[k].innerHTML = '';
             can = true;
             access = true;
             score.innerHTML =
@@ -189,9 +189,9 @@ function up() {
             access === true
           ) {
             access === false;
-          } else if (arr[k - 4].innerHTML === "") {
+          } else if (arr[k - 4].innerHTML === '') {
             arr[k - 4].innerHTML = parseInt(arr[k].innerHTML);
-            arr[k].innerHTML = "";
+            arr[k].innerHTML = '';
             can = true;
           }
           k -= 4;
@@ -206,7 +206,7 @@ function up() {
 
 function end() {
   alert(
-    "Your Score Is:" + document.getElementById("score").innerHTML + " Game Over"
+    'Your Score Is:' + document.getElementById('score').innerHTML + ' Game Over'
   );
   reset();
 }
@@ -215,7 +215,7 @@ function random() {
   var done = false;
   while (done === false) {
     var num = Math.floor(Math.random() * 16);
-    if (arr[num].innerHTML === "") {
+    if (arr[num].innerHTML === '') {
       arr[num].innerHTML = 2;
       done = true;
     }
@@ -226,7 +226,7 @@ function av() {
   var x = false;
   var count = 0;
   for (var i = 0; i < 16; i++) {
-    if (arr[i].innerHTML === "") {
+    if (arr[i].innerHTML === '') {
       x = true;
       count++;
     }
@@ -395,53 +395,76 @@ function check() {
 }
 
 function init() {
-  var s = document.getElementById("splash");
-  s.style.display = "block";
-  var arr = document.getElementsByClassName("element");
+  var s = document.getElementById('splash');
+  s.style.display = 'block';
+  var arr = document.getElementsByClassName('element');
   for (var i = 0; i < 16; i += 1) {
-    arr[i].innerHTML = "";
+    arr[i].innerHTML = '';
   }
-  var control = document.getElementById("control");
-  control.style.display = "block";
-  var score = document.getElementById("score");
+  var control = document.getElementById('control');
+  control.style.display = 'block';
+  var score = document.getElementById('score');
   score.innerHTML = 0;
 }
 
 function pause() {
-  var pause = document.getElementById("pause");
-  pause.style.display = "block";
-  var control = document.getElementById("control");
-  control.style.display = "none";
+  var pause = document.getElementById('pause');
+  pause.style.display = 'block';
+  var control = document.getElementById('control');
+  control.style.display = 'none';
+
+  // add additional moves -- to undo the window.addEventListener
+  window.removeEventListener('keydown', handleKeydown);
 }
 function reset() {
-  var pause = document.getElementById("pause");
-  pause.style.display = "none";
+  var pause = document.getElementById('pause');
+  pause.style.display = 'none';
   init();
+
+  //Add the event listener
+  window.addEventListener('keydown', handleKeydown);
 }
 function start() {
-  var splash = document.getElementById("splash");
-  var game = document.getElementById("game");
-  splash.style.display = "none";
-  game.style.display = "block";
+  var splash = document.getElementById('splash');
+  var game = document.getElementById('game');
+  splash.style.display = 'none';
+  game.style.display = 'block';
   random();
   random();
   //alert();
 }
 function resume() {
-  var pause = document.getElementById("pause");
-  pause.style.display = "none";
-  var control = document.getElementById("control");
-  control.style.display = "block";
+  var pause = document.getElementById('pause');
+  pause.style.display = 'none';
+  var control = document.getElementById('control');
+  control.style.display = 'block';
+
+  window.addEventListener('keydown', handleKeydown);
 }
 
-window.addEventListener("keydown", function (e) {
-  if (e.code == "ArrowLeft") {
+// window.addEventListener("keydown", function (e) {
+//   if (e.code == "ArrowLeft") {
+//     left();
+//   } else if (e.code == "ArrowRight") {
+//     right();
+//   } else if (e.code == "ArrowUp") {
+//     up();
+//   } else if (e.code == "ArrowDown") {
+//     down();
+//   }
+// });
+
+function handleKeydown(e) {
+  if (e.code == 'ArrowLeft') {
     left();
-  } else if (e.code == "ArrowRight") {
+  } else if (e.code == 'ArrowRight') {
     right();
-  } else if (e.code == "ArrowUp") {
+  } else if (e.code == 'ArrowUp') {
     up();
-  } else if (e.code == "ArrowDown") {
+  } else if (e.code == 'ArrowDown') {
     down();
   }
-});
+}
+
+//Add the event listener
+window.addEventListener('keydown', handleKeydown);
